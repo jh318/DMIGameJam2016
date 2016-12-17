@@ -1,0 +1,34 @@
+﻿using UnityEngine;
+using System.Collections;
+using Paraphernalia.Extensions;
+
+public class Damage3D : MonoBehaviour {
+
+	public float damage = 1;
+	public float multiplier = 1;
+	public bool disableOnCollision = false;
+
+	public bool affectAncestor = false;
+
+	protected virtual float GetDamage() {
+		if (disableOnCollision) gameObject.SetActive(false);
+		return damage * multiplier;
+	}
+
+	protected virtual float GetDamage(Vector2 velocity, Vector2 normal) {
+		return GetDamage();
+	}
+
+	void OnTriggerEnter (Collider collider) {
+		HealthController h = collider.gameObject.GetComponent<HealthController>();
+		if (h == null && affectAncestor) h = collider.gameObject.GetAncestorComponent<HealthController>();
+		if (h != null) h.TakeDamage(GetDamage());
+	}
+
+	void OnCollisionEnter (Collision collision) {
+		Debug.Log("HERE");
+		HealthController h = collision.gameObject.GetComponent<HealthController>();
+		if (h == null && affectAncestor) h = collision.gameObject.GetAncestorComponent<HealthController>();
+		if (h != null) h.TakeDamage(GetDamage(collision.relativeVelocity, collision.contacts[0].normal));
+	}		
+}

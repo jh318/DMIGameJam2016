@@ -303,6 +303,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1258555208607742
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4517389298055308}
+  m_Layer: 0
+  m_Name: CameraTarget
+  m_TagString: CameraTarget
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
 --- !u!1 &1259859142791504
 GameObject:
   m_ObjectHideFlags: 1
@@ -810,6 +825,9 @@ GameObject:
   - component: {fileID: 95260871118867086}
   - component: {fileID: 143667127318488870}
   - component: {fileID: 114318943206192086}
+  - component: {fileID: 54829385279941114}
+  - component: {fileID: 136287014103322812}
+  - component: {fileID: 114543593042655740}
   m_Layer: 0
   m_Name: SluttySanta
   m_TagString: Player
@@ -1376,11 +1394,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1063798503055058}
   m_LocalRotation: {x: 0.10331167, y: -0, z: -0, w: 0.99464905}
-  m_LocalPosition: {x: -2.75, y: -4.2375, z: -1.4675}
+  m_LocalPosition: {x: -4.2799997, y: -3.5875, z: -2.4275}
   m_LocalScale: {x: 1, y: 0.9999999, z: 0.9999999}
   m_Children: []
   m_Father: {fileID: 4631074405419624}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 11.860001, y: 0, z: 0}
 --- !u!4 &4507164902077504
 Transform:
@@ -1395,6 +1413,19 @@ Transform:
   - {fileID: 4964636838402038}
   m_Father: {fileID: 4624884324789476}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4517389298055308
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1258555208607742}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.0000021457672, y: 0, z: 2.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4815962626843880}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4559024396538580
 Transform:
@@ -1514,10 +1545,10 @@ Transform:
   m_LocalPosition: {x: -3.25, y: 2.5875, z: -3.3225}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 4815962626843880}
+  - {fileID: 4504509231461906}
   - {fileID: 4973655846315426}
   - {fileID: 4882561574632018}
-  - {fileID: 4504509231461906}
-  - {fileID: 4815962626843880}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1680,13 +1711,14 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1767359696228894}
   m_LocalRotation: {x: -0, y: 0.70710707, z: -0, w: 0.70710653}
-  m_LocalPosition: {x: -2.75, y: -6.0875, z: 3.3225}
+  m_LocalPosition: {x: -7.5, y: -6.0875, z: 3.3225}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4311566637448240}
   - {fileID: 4739521872444936}
+  - {fileID: 4517389298055308}
   m_Father: {fileID: 4631074405419624}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90.00001, z: 0}
 --- !u!4 &4816615337652932
 Transform:
@@ -1740,7 +1772,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1.0000001, z: 0.99999994}
   m_Children: []
   m_Father: {fileID: 4631074405419624}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!4 &4895626985778690
 Transform:
@@ -1877,7 +1909,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4631074405419624}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 39.325, y: 46.242, z: 15.691001}
 --- !u!4 &4987193733094748
 Transform:
@@ -1940,6 +1972,21 @@ Camera:
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
   m_StereoMirrorMode: 0
+--- !u!54 &54829385279941114
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1767359696228894}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 8
+  m_CollisionDetection: 0
 --- !u!81 &81998339834618960
 AudioListener:
   m_ObjectHideFlags: 1
@@ -2054,8 +2101,6 @@ MonoBehaviour:
   chrAnimatorController:
   - {fileID: 9100000, guid: f917649f59d2a98409c7e0c535ed9853, type: 2}
   chrController: {fileID: 143667127318488870}
-  mat: {fileID: 137480091969337942}
-  tex: []
   items:
   - {fileID: 100002, guid: 59591e7fd9e127c48b2c071d361caed0, type: 2}
   - {fileID: 100002, guid: 1f5e4dca89c07ad418e1de41f8a99bd4, type: 2}
@@ -2088,16 +2133,35 @@ MonoBehaviour:
   camera: {fileID: 20672155949970812}
   target: {fileID: 4815962626843880}
   useFixedUpdate: 0
-  offset: {x: -0, y: 1.85, z: -4.79}
-  speed: 1.58
-  moveStartDist: 0.82
-  velocityAdjustment: {x: 0.44, y: 0, z: 0}
+  offset: {x: 3.22, y: 2.5, z: -5.75}
+  speed: 7.47
+  moveStartDist: 4.7
+  velocityAdjustment: {x: 0, y: 0, z: 0}
   bounded: 0
   boundsObject: {fileID: 0}
   bounds:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
-  easeType: 3
+  easeType: 4
+--- !u!114 &114543593042655740
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1767359696228894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31839d8b31cce4d798caa4e0d9e650d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageSoundName: 
+  deathSoundName: 
+  destructionSoundName: 
+  deathParticlesName: 
+  destructionParticlesName: 
+  destructionSpawnName: 
+  maxHealth: 3
+  destructionHealth: -1
 --- !u!124 &124606104329125990
 Behaviour:
   m_ObjectHideFlags: 1
@@ -2105,6 +2169,19 @@ Behaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1063798503055058}
   m_Enabled: 1
+--- !u!136 &136287014103322812
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1767359696228894}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.18
+  m_Height: 1.6
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.84, z: 0}
 --- !u!137 &137480091969337942
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

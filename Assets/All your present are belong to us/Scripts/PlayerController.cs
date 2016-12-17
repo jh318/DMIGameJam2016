@@ -1,12 +1,9 @@
-﻿using System.Collections;
+﻿using UnityEngine;
+using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
+using Paraphernalia.Components;
+using Paraphernalia.Utils;
 
-/*
-    ChrAnimatorControl is script to control the characters in demoscene.
-    will move character , play animation , the position of the weapon , play effect , reaction of key input.
-    2015.10.24
-*/
 
 public class PlayerController : MonoBehaviour {
 
@@ -15,14 +12,16 @@ public class PlayerController : MonoBehaviour {
     public RuntimeAnimatorController[] chrAnimatorController;// AnimatorController for viewer and interactive
     public CharacterController chrController;    // CharacterController component.
     [Space(20)]
-    public SkinnedMeshRenderer mat; // material.
-    public Texture2D[] tex; // textures.
-    private int texIdx; // Index of tex.
-    [Space(20)]
     public GameObject[] items;  // prefab of items.
     private GameObject itemInHand;  // Items that santa girl have.
     public Transform[] itemPoint = new Transform[2]; // attach point (parent object of items)
     public GameObject[] meshData; // character and weapon , the object mesh data is included.
+ 	
+    //HealthController property for triggering hit and fail animations.
+    private HealthController _healthCon;
+    public HealthController healthCon {get {return _healthCon;}}
+    private CapsuleCollider collider;
+
 
     // to control movement of characters , such as jumps.
     [Space(20)]
@@ -38,6 +37,20 @@ public class PlayerController : MonoBehaviour {
     // power of Through item animation use.
     public float[] throughPower = new float[3];
     
+    void Awake(){
+		_healthCon = gameObject.GetComponent<HealthController>();
+		collider = gameObject.GetComponent<CapsuleCollider>();
+    }
+
+    void OnEnable(){
+    	_healthCon.onHealthChanged += DamageAnimationTrigger;
+    	_healthCon.onDeath += PlayFailAnimation;
+    }
+
+    void OnDisable(){
+    	_healthCon.onHealthChanged -= DamageAnimationTrigger;
+    	_healthCon.onDeath -= PlayFailAnimation;
+    }
 
     void Update() 
     {
@@ -54,21 +67,16 @@ public class PlayerController : MonoBehaviour {
         else if(Input.GetButtonDown("attack") && Input.GetButton("grabPresent"))   SetAttack(3);
         else if(Input.GetButtonDown("attack"))   SetAttack(2);
         
-        // Take out Prezent
-        if( Input.GetButtonDown("grabPresent") && stateInfo.IsName("na_Idle_00") ){
+        // Take out Present
+        if( Input.GetButtonDown("grabPresent") /*&& stateInfo.IsName("na_Idle_00")*/ ){
             chrAnimator.SetBool("Items_Bool", true);
         }
+
+
         /*
         // for Guard
         if(Input.GetButtonDown("guard"))   chrAnimator.SetBool("Guard_Bool", true);
         if(Input.GetButtonUp("guard")) chrAnimator.SetBool("Guard_Bool", false);
-        // for Damage
-        if(Input.GetButtonDown("c"))   chrAnimator.SetTrigger("Damage_Trg");
-        // Failed
-        if(Input.GetButtonDown("v")){
-            if(stateInfo.IsName("na_Idle_00") || stateInfo.IsName("na_Failed_Loop_00"))
-                chrAnimator.SetBool("Failed_Bool", !chrAnimator.GetBool("Failed_Bool") );
-        }
         // Success
         if(Input.GetKeyDown("b")){
             if(stateInfo.IsName("na_Idle_00") || stateInfo.IsName("na_Success_Loop_00"))
@@ -83,19 +91,13 @@ public class PlayerController : MonoBehaviour {
         
         Vector3 axisInput = new Vector3(h, 0, 0);
         float axisInputMag = axisInput.magnitude;
-        // if(axisInputMag > 1){
-            // axisInputMag = 1;
-            //axisInput.Normalize();
-        // }
 
         runSpeed = 0f;
         if(axisInputMag != 0){
-            // for run
-            //if(Input.GetButton("run"))
                 runSpeed = 2;
             axisInput = Camera.main.transform.rotation * axisInput;
             axisInput.y = 0;
-            // character rotate by scipt
+            // character rotate by script
             // free move
             if(axisInput != Vector3.zero)
                 transform.forward = axisInput;
@@ -144,8 +146,19 @@ public class PlayerController : MonoBehaviour {
         // character is move by moveDirection.
         chrController.Move(moveDirection * Time.deltaTime);
     }
-    
-    // when pressed attack button
+    // Delegates of HealthController event onHealthChanged
+    void DamageAnimationTrigger(float health, float prevHealth, float maxHealth){
+		// for Damage
+        if (health < prevHealth){
+			chrAnimator.SetTrigger("Damage_Trg");
+		}
+		Debug.Log("Ow! My health is now " + health);
+    }
+    // Delegates of HealthController event onDeath
+    void PlayFailAnimation(){
+        chrAnimator.SetBool("Failed_Bool", !chrAnimator.GetBool("Failed_Bool") );
+    }
+
     // control AttackIdx parameter to play attack animation.
     void SetAttack(int param){
         chrAnimator.SetInteger("AttackIdx", param);
@@ -236,128 +249,4 @@ public class PlayerController : MonoBehaviour {
         }
         chrAnimator.CrossFade(stateName, 0.05f);
     }
-
-    
-    
-    // read 3D model information.
-    // vertex count, triangles, and joint of character and weapon.
-    // this function is called from GUIControl.
-    public string MeshData(){
-        string mdlInfo; // text.
-        int[] charData = new int[3]; // vertex.
-
-        charData = GetMeshProperty (meshData);
-        mdlInfo = "Character\n      Vertex : " + charData[0].ToString() + ", Tris : " + charData[1].ToString() + ", Bones : " + charData[2].ToString();
-        return mdlInfo;
-    }
-    // collect child of rootObject which have meshrenderer component or skinnedmeshrenderer component.
-    GameObject[] CollectMeshRenderer(GameObject rootObject){
-        SkinnedMeshRenderer[] skinned = rootObject.GetComponentsInChildren<SkinnedMeshRenderer> ();
-        MeshRenderer[] nonSkin = rootObject.GetComponentsInChildren<MeshRenderer> ();
-        GameObject[] list;
-        if (skinned.Length + nonSkin.Length == 0) {
-            list = new GameObject[1];
-            list[0] = null;
-        }
-        else{
-            list = new GameObject[skinned.Length + nonSkin.Length];
-            for(int i = 0; i < skinned.Length; i++ ){
-                list[i] = skinned[i].gameObject;
-            }
-            for(int i = 0; i < nonSkin.Length; i++ ){
-                list[(i + skinned.Length)] = nonSkin[i].gameObject;
-            }
-        }
-        
-        return list;
-    }
-    
-    // get vertices, triangles, bone count from gameObject list.
-    int[] GetMeshProperty(GameObject[] mesh){
-        int[] property = new int[3]; // 0 : vertex, 1 : triangle, 2 : joint.
-        Transform[] boneList = null;
-        if (mesh [0] != null) {
-            for (int i = 0; i < mesh.Length; i++) {
-                SkinnedMeshRenderer skinnedMesh = mesh [i].GetComponent<SkinnedMeshRenderer> ();
-                // skinned model.
-                if (skinnedMesh) {
-                    property [0] = property [0] + skinnedMesh.sharedMesh.vertices.Length;
-                    property [1] = property [1] + (skinnedMesh.sharedMesh.triangles.Length / 3);
-                    if(i == 0){
-                        boneList = skinnedMesh.bones;
-                    }
-                    else{
-                        boneList = RejectDoubledBones(boneList, skinnedMesh.bones);
-                    }
-                    property [2] = boneList.Length;
-                }
-                // mesh only.
-                else {
-                    property [0] = property [0] + mesh [i].GetComponent<MeshFilter> ().sharedMesh.vertices.Length;
-                    property [1] = property [1] + (mesh [i].GetComponent<MeshFilter> ().sharedMesh.triangles.Length / 3);
-                    property [2] = property [2] + 0;
-                }
-            }
-        }
-        return property;
-    }
-    
-    // compare bone list and make new bone list that does not overlapped.
-    Transform[] RejectDoubledBones(Transform[] boneListA, Transform[] boneListB ){
-        Transform[] newList = new Transform[boneListB.Length];
-        int idx = 0;
-        
-        for (int i = 0; i < boneListB.Length; i++) {
-            bool check = false;
-            for (int j = 0; j < boneListA.Length; j++) {
-                if (boneListB[i] == boneListA[j]) {
-                    check = true;
-                    break;
-                }
-            }
-            if(!check){
-                newList[idx] = boneListB[i];
-                idx++;
-            }
-        }
-        
-        Transform[] returnList = new Transform[boneListA.Length + idx];
-        for (int i = 0; i < boneListA.Length; i++)
-            returnList[i] = boneListA[i];
-        for (int i = 0; i < idx; i++)
-            returnList[i + boneListA.Length] = newList[i];
-        
-        return returnList;
-    }
-
-    // this function is called from GUIControl.
-    public void SetShader(int shaderId){
-        string[] ShaderName = new string[3];
-        ShaderName[0] = "Specular";
-        ShaderName[1] = "Diffuse";
-        ShaderName[2] = "Unlit/Texture";
-        
-        for(var i = 0; i < meshData.Length; i++){
-            SkinnedMeshRenderer skinnedMeshData = meshData[i].GetComponent<SkinnedMeshRenderer>();
-            if(skinnedMeshData){
-                skinnedMeshData.material.shader = Shader.Find(ShaderName[shaderId]);
-            }
-            else{
-                meshData[i].GetComponent<MeshRenderer>().material.shader = Shader.Find(ShaderName[shaderId]);
-            }
-        }
-    }
-        
-    // change Texture
-    // this function is called from GUIControl.
-    public void ChangeTexture(bool isResetTex){
-        if (isResetTex)
-            texIdx = 0;
-        else {
-            texIdx++;
-            texIdx = (int)Mathf.Repeat (texIdx, tex.Length);
-        }
-        mat.material.mainTexture = tex[texIdx];
-    }
-
 }
