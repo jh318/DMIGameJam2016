@@ -72,9 +72,13 @@ public class PlayerController : MonoBehaviour {
  			SetAttack(2);
 	    } 
 
-        if (Input.GetButtonDown("specialAttack")) {
-		    SetAttack(3); // Throw giant present
+        if (Input.GetButtonDown("specialAttack") && chrAnimator.GetBool("Items_Bool") == false) {
+        	chrAnimator.SetBool("Items_Bool", true);
 		}
+
+	 	else if (Input.GetButtonDown("specialAttack")) {
+ 			SetAttack(3);
+	    } 
        
         /*
         // for Guard
