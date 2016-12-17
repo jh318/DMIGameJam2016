@@ -6,10 +6,12 @@ public class GIveMeYourINfo : MonoBehaviour {
 
 	public static List<GameObject> presentPool = new List<GameObject>();
 
-	private bool hasReported = false;
+	public static GIveMeYourINfo instance;
 
+	void Awake () { // Use this for initialization
+		if (instance == null)	instance = this;
+	}
 	void Update(){
-        if(presentPool.Count >= 4 && !hasReported)   AddUpPresentValues();
 
 	}
 
@@ -20,11 +22,11 @@ public class GIveMeYourINfo : MonoBehaviour {
 		}
 	}
 
-	void AddUpPresentValues(){
+	public void AddUpPresentValues(){
 		foreach (GameObject present in presentPool){
 			PresentController pc = present.GetComponent<PresentController>();
+			Debug.Log ("Here");
 			GameManager.instance.AddToScore(pc.scoreValue);
 		}
-		hasReported = true;
 	}
 }

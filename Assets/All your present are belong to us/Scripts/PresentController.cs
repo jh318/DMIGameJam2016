@@ -9,8 +9,7 @@ public class PresentController : MonoBehaviour {
 	public string objectTag; // Object to collides with. Set to player.
 
 	// Use this for initialization
-	void Awake () {
-	}
+
 	
 	// Update is called once per frame
 	void Update () {
@@ -19,9 +18,10 @@ public class PresentController : MonoBehaviour {
 	//Check for collision with a 2D object
 	void OnCollisionEnter(Collision other)
 	{
-		if(other.gameObject.tag == "Player")
+		if(other.gameObject.tag == "Player"){
 			//GameManager.instance.AddToScore(scoreValue);
 			gameObject.SetActive(false);
 	}
 
+}
 }
