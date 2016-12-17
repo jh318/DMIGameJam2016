@@ -13,15 +13,15 @@ public class PlayerController : MonoBehaviour {
     public CharacterController chrController;    // CharacterController component.
     [Space(20)]
     public GameObject[] items;  // prefab of items.
-    private GameObject itemInHand;  // Items that santa girl have.
+    private GameObject itemInHand;  // Items that Santa girl has.
     public Transform[] itemPoint = new Transform[2]; // attach point (parent object of items)
     public GameObject[] meshData; // character and weapon , the object mesh data is included.
  	
     //HealthController property for triggering hit and fail animations.
     private HealthController _healthCon;
     public HealthController healthCon {get {return _healthCon;}}
-    private CapsuleCollider collider;
-
+    
+    private CapsuleCollider collider; // Required for health and damage controllers to work.
 
     // to control movement of characters , such as jumps.
     [Space(20)]
@@ -34,26 +34,25 @@ public class PlayerController : MonoBehaviour {
     private AnimatorStateInfo stateInfo; // Save the state in playing now.
     private float runSpeed;
 
-    // power of Through item animation use.
-    public float[] throughPower = new float[3];
+    // power of Throw item animation use.
+    public float[] throwPower = new float[3];
     
-    void Awake(){
+    void Awake() {
 		_healthCon = gameObject.GetComponent<HealthController>();
 		collider = gameObject.GetComponent<CapsuleCollider>();
     }
-
-    void OnEnable(){
+    //Listen for these events while enabled.
+    void OnEnable() {
     	_healthCon.onHealthChanged += DamageAnimationTrigger;
     	_healthCon.onDeath += PlayFailAnimation;
     }
-
-    void OnDisable(){
+    // Stop listening for these events when disabled.
+    void OnDisable() {
     	_healthCon.onHealthChanged -= DamageAnimationTrigger;
     	_healthCon.onDeath -= PlayFailAnimation;
     }
 
-    void Update() 
-    {
+    void Update() {
         // Save the state in playing now.
         stateInfo = chrAnimator.GetCurrentAnimatorStateInfo(0);
         
@@ -72,7 +71,6 @@ public class PlayerController : MonoBehaviour {
             chrAnimator.SetBool("Items_Bool", true);
         }
 
-
         /*
         // for Guard
         if(Input.GetButtonDown("guard"))   chrAnimator.SetBool("Guard_Bool", true);
@@ -83,8 +81,7 @@ public class PlayerController : MonoBehaviour {
                 chrAnimator.SetBool("Success_Bool", !chrAnimator.GetBool("Success_Bool") );
         }
         */
-        
-        
+             
         // movement.
         // Input of character moves 
         float h = Input.GetAxis("Horizontal");
@@ -104,7 +101,6 @@ public class PlayerController : MonoBehaviour {
         }
         chrAnimator.SetFloat ("Speed", (axisInputMag * runSpeed));
 
-        //Debug.Log(axisInputMag);
         // Jump
         // while in jump, I am using Character Controller instead Root Motion, to move the Character.
         // in ground.
@@ -146,7 +142,8 @@ public class PlayerController : MonoBehaviour {
         // character is move by moveDirection.
         chrController.Move(moveDirection * Time.deltaTime);
     }
-    // Delegates of HealthController event onHealthChanged
+
+    // Delegate of HealthController event onHealthChanged
     void DamageAnimationTrigger(float health, float prevHealth, float maxHealth){
 		// for Damage
         if (health < prevHealth){
@@ -154,7 +151,7 @@ public class PlayerController : MonoBehaviour {
 		}
 		Debug.Log("Ow! My health is now " + health);
     }
-    // Delegates of HealthController event onDeath
+    // Delegate of HealthController event onDeath
     void PlayFailAnimation(){
         chrAnimator.SetBool("Failed_Bool", !chrAnimator.GetBool("Failed_Bool") );
     }
@@ -181,9 +178,9 @@ public class PlayerController : MonoBehaviour {
     }
     
     // through Items
-    // ThroughItem() is called from Animation event.
-    // na_ThroughItem, na_ThroughItem_Sp, na_prezentItem
-    void ThroughItem(){
+    // ThrowItem() is called from Animation event.
+    // na_ThrowItem, na_ThrowItem_Sp, na_prezentItem
+    void ThrowItem(){
         if(itemInHand){
             itemInHand.transform.parent = null;
             itemInHand.GetComponent<Rigidbody>().isKinematic = false;
@@ -193,8 +190,8 @@ public class PlayerController : MonoBehaviour {
                 idx = 0;
                 itemInHand.GetComponent<ItemControl>().waitTime = 1f;
             }
-            Vector3 dir = transform.forward * throughPower[idx];
-            dir.y = throughPower[idx] * 0.75f;
+            Vector3 dir = transform.forward * throwPower[idx];
+            dir.y = throwPower[idx] * 0.75f;
             itemInHand.GetComponent<Rigidbody>().AddForce(dir);
             itemInHand.GetComponent<ItemControl>().InitBullet();
             itemInHand = null;
@@ -220,24 +217,6 @@ public class PlayerController : MonoBehaviour {
         }
     }
 
-    // change Animator Controller.
-    // this function is called from GUIControl.
-    public void ControllerChange(int idx){
-        if(this.gameObject.activeSelf)
-            StartCoroutine (AnimControllerChange (idx));
-        else
-            chrAnimator.runtimeAnimatorController = chrAnimatorController[idx];
-    }
-    private IEnumerator AnimControllerChange(int idx){
-        // play Idle 0.1 second before change contorller
-        // It is prevent error of transform
-        PlayClip("na_Idle_00" , 0);
-        yield return new WaitForSeconds(0.1f);
-        chrAnimator.runtimeAnimatorController = chrAnimatorController[idx];
-        PlayClip("na_Idle_00" , 0);
-    }
-
-    
     // play animation state.
     // for viewer mode
     public void PlayClip(string stateName , int item){
