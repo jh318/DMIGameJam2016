@@ -1,0 +1,3 @@
+[submodule "Assets/Vendor/Paraphernalia"]
+	path = Assets/Vendor/Paraphernalia
+	url = git@github.com:MacMasterBlaster/Paraphernalia
