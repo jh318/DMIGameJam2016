@@ -156,9 +156,9 @@ public class PlayerController : MonoBehaviour {
     void DamageAnimationTrigger(float health, float prevHealth, float maxHealth){
 		// for Damage
         if (health < prevHealth){
-			chrAnimator.SetTrigger("Damage_Trg");
+ 			chrAnimator.SetTrigger("Damage_Trg");
 		}
-		Debug.Log("Ow! My health is now " + health);
+		//Debug.Log("Ow! My health is now " + health);
     }
     // Delegate of HealthController event onDeath
     void PlayFailAnimation(){
