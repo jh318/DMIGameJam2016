@@ -17,11 +17,9 @@ public class GameManager : MonoBehaviour {
 		if (instance == null){
 			instance = this;
 		}
-<<<<<<< HEAD
 		else{
 		}		
-=======
->>>>>>> inscreased sluttySanta Move Speed and modified camera for perscetive only.
+//inscreased sluttySanta Move Speed and modified camera for perscetive only.
 	}
 	
 	// Update is called once per frame
