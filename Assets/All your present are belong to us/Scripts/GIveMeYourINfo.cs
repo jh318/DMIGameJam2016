@@ -11,9 +11,6 @@ public class GIveMeYourINfo : MonoBehaviour {
 	void Awake () { // Use this for initialization
 		if (instance == null)	instance = this;
 	}
-	void Update(){
-
-	}
 
 	void OnCollisionEnter (Collision other){
 		if (other.gameObject.tag == "present"){
@@ -25,8 +22,8 @@ public class GIveMeYourINfo : MonoBehaviour {
 	public void AddUpPresentValues(){
 		foreach (GameObject present in presentPool){
 			PresentController pc = present.GetComponent<PresentController>();
-			Debug.Log ("Here");
 			GameManager.instance.AddToScore(pc.scoreValue);
 		}
+		Debug.Log ("Here");
 	}
 }
