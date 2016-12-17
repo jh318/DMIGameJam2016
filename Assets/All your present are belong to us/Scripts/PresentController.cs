@@ -8,33 +8,20 @@ public class PresentController : MonoBehaviour {
 	public int scoreValue;
 	public string objectTag; // Object to collides with. Set to player.
 
-
-
-
-
 	// Use this for initialization
 	void Awake () {
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		/**if (Collision.collider.tag == collideWithThisTag) 
-		{
-			
-		}*/
 	}
 
 	//Check for collision with a 2D object
 	void OnCollisionEnter(Collision other)
 	{
-		if(other.gameObject.tag==objectTag)
-			Destroy(gameObject);
+		if(other.gameObject.tag == "Player")
 			GameManager.instance.AddToScore(scoreValue);
-
-		//TODO add to player score
-		//ScoreController.score
-		//GameManager.GetComponent<GameManager>().AddToScore(scoreValue);
-		GameManager.instance.AddToScore(scoreValue);
+			Destroy(gameObject);
 	}
 
 }

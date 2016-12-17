@@ -1816,8 +1816,6 @@ MonoBehaviour:
   chrAnimatorController:
   - {fileID: 9100000, guid: f917649f59d2a98409c7e0c535ed9853, type: 2}
   chrController: {fileID: 143429539334519554}
-  mat: {fileID: 137754871267359086}
-  tex: []
   items:
   - {fileID: 100002, guid: 59591e7fd9e127c48b2c071d361caed0, type: 2}
   - {fileID: 100002, guid: 1f5e4dca89c07ad418e1de41f8a99bd4, type: 2}
@@ -1829,10 +1827,7 @@ MonoBehaviour:
   - {fileID: 1186977688447334}
   jumpSpeed: 8
   moveAbilityInAir: 4
-  throughPower:
-  - 220
-  - 220
-  - 220
+  throwPower: []
 --- !u!114 &114418508802062434
 MonoBehaviour:
   m_ObjectHideFlags: 1

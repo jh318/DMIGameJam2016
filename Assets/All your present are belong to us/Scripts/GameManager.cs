@@ -24,7 +24,6 @@ public class GameManager : MonoBehaviour {
 	public void SubtractFromScore(int pointValue) {
         instance._score -= pointValue;
 		instance.UpdateScore ();
-        // instance.SetScoreText();
 		// AudioManager.PlayEffect("coinLost");
     }
 
