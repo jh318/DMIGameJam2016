@@ -58,19 +58,24 @@ public class PlayerController : MonoBehaviour {
         
         // Integer parameter reset to 0. 
         if(!stateInfo.IsTag("InAttack")) 
-            chrAnimator.SetInteger("AttackIdx", 0);
+        	chrAnimator.SetInteger("AttackIdx", 0);
         
         // reaction of key input.
-        // for Attack
-        if(Input.GetButtonDown("attack") && Input.GetButton("run"))   SetAttack(1);
-        else if(Input.GetButtonDown("attack") && Input.GetButton("grabPresent"))   SetAttack(3);
-        else if(Input.GetButtonDown("attack"))   SetAttack(2);
-        
-        // Take out Present
-        if( Input.GetButtonDown("grabPresent") /*&& stateInfo.IsName("na_Idle_00")*/ ){
-            chrAnimator.SetBool("Items_Bool", true);
-        }
 
+        // Take out Present
+       	if (Input.GetButtonDown("attack") && chrAnimator.GetBool("Items_Bool") == false) {
+        	chrAnimator.SetBool("Items_Bool", true);
+    	}
+        
+        // for Attack
+        else if (Input.GetButtonDown("attack")) {
+ 			SetAttack(2);
+	    } 
+
+        if (Input.GetButtonDown("specialAttack")) {
+		    SetAttack(3); // Throw giant present
+		}
+       
         /*
         // for Guard
         if(Input.GetButtonDown("guard"))   chrAnimator.SetBool("Guard_Bool", true);
@@ -180,7 +185,7 @@ public class PlayerController : MonoBehaviour {
     // through Items
     // ThrowItem() is called from Animation event.
     // na_ThrowItem, na_ThrowItem_Sp, na_prezentItem
-    void ThrowItem(){
+    void ThroughItem(){
         if(itemInHand){
             itemInHand.transform.parent = null;
             itemInHand.GetComponent<Rigidbody>().isKinematic = false;

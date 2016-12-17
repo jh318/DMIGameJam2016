@@ -1,5 +1,4 @@
 TODO:
 
 make wave animation trigger raycast to taunt enemies toward you so you can yell "no" and hit them with a present.
-Figure out relation between healthcontroller and damageController vs our Gamemanager which should manage the score/health of the player.
 Add building models to mainScene see how size of background elements works with current player settings.
