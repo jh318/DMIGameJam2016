@@ -4,21 +4,12 @@ using System.Collections;
 /*
     ChrAnimatorControl is script to control the characters in demoscene.
     will move character , play animation , the position of the weapon , play effect , reaction of key input.
-    
-	ChrAnimatorControlはデモシーンに配置されたキャラクターを制御するスクリプトです。.
-    キャラクターの移動、アニメーションの再生、武器の表示位置、エフェクトの発生、キー入力に対するリアクションを行います。.
-
-    ChrAnimatorControl은 데모신에 배치된 캐릭터를 제어하기위한 스크립트 입니다.
-    캐릭터의 이동, 애니메이션의 재생, 무기의 위치, 이펙트의 발생, 키 입력에 대한 반응을 합니다. 
-	
 	2015.10.24
 */
 
 public class SantaAnimatorControl : MonoBehaviour {
 
 	// required Object or component
-	//　制御に必要なオブジェクトなど。
-	//　필요한 컴포넨트, 오브젝트 등등.
 	public Animator chrAnimator;    // Animator component of character.
 	public RuntimeAnimatorController[] chrAnimatorController;// AnimatorController for viewer and interactive
 	public CharacterController chrController;    // CharacterController component.
@@ -33,28 +24,22 @@ public class SantaAnimatorControl : MonoBehaviour {
 	public GameObject[] meshData; // character and weapon , the object mesh data is included.
 
 	// to control movement of characters , such as jumps.
-	//　キャラクターの移動や、アニメータをコントロールするもの。.
-	//　캐릭터의 이동, 점프등을 제어하기 위해서 필요한것.
 	[Space(20)]
 	public float jumpSpeed = 8.0f;
 	public float moveAbilityInAir = 4.0f;
 	private float jumpAmount = 0.0f;
-	private float runParam = 0.0f;
+	private float runParam = 1f;
 	private Vector3 moveDirection = Vector3.zero;
 	private float gravity = 10.0f;
 	private AnimatorStateInfo stateInfo; // Save the state in playing now.
 
 	// power of Through item animation use.
-	//　投げるモージョン時に使う投げる力.
-	//　아이템을 던질 때의 파워.
 	public float[] throughPower = new float[3];
 	
 
 	void Update() 
 	{
 		// Save the state in playing now.
-		//　再生中のステートの情報を入れる。.
-		// 재생중인 스테이트를 저장.
 		stateInfo = chrAnimator.GetCurrentAnimatorStateInfo(0);
 		
 		// Integer parameter reset to 0. 
@@ -62,8 +47,6 @@ public class SantaAnimatorControl : MonoBehaviour {
 			chrAnimator.SetInteger("AttackIdx", 0);
 		
 		// reaction of key input.
-		// キー入力に対するリアクションを起こす。.
-		// 키입력에 대한 반응.
 		// for Attack
 		if(Input.GetButtonDown("Fire1") && Input.GetKey("z"))	SetAttack(1);
 		else if(Input.GetButtonDown("Fire1") && Input.GetButton("Fire2"))	SetAttack(3);
@@ -118,8 +101,6 @@ public class SantaAnimatorControl : MonoBehaviour {
 
 		// Jump
 		// while in jump, I am using Character Controller instead Root Motion, to move the Character.
-		// ジャンプ時は、キャラクターコントローラを使ってキャラクターを移動させます。.
-		// 점프시에는 캐릭터 컨트롤러를 이용하여 캐릭터를 이동시키고 있습니다.	
 		// in ground.
 		if(chrController.isGrounded){
 			if(stateInfo.IsName("na_Jump_00_fall") || stateInfo.IsName("na_Jump_01_fall") ){
@@ -130,19 +111,13 @@ public class SantaAnimatorControl : MonoBehaviour {
 			
 			if(chrAnimator.GetInteger("JumpIdx") == 0){
 				// moveDirection set 0, to prevent to move by Character controller.
-				// moveDirectionはゼロにして、キャラクターコントローラがキャラクターを動かさないように。.
-				// moveDirection은 0으로 돌려서, 캐릭터 컨트롤러가 캐릭터를 움직이지 않도록한다.
-				moveDirection = new Vector3(0, 0, 0);
+				moveDirection = Vector3.zero;
 			}
 			
 			// press Jump button. make jump
 			// if Animator parameter "JumpIdx" is 1, 
 			// animator will play state of "Jump_00_start"
 			// when play state of "Jump_00_up", animation event will call SetJump()
-			// Jumpパラメータからアニメーションが遷移し、.
-			// "Jump_00_up"のときにイベントでSetJump()ファンクションを呼ぶ。.
-			// Jump파라메터를 통해 스테이트가 점프애니메이션을 재생하고,
-			// "Jump_00_up"스테이트를 재생할때 SetJump()를 부른다.
 			if(Input.GetButtonDown("Jump"))
 				chrAnimator.SetInteger("JumpIdx", 1);
 		}
@@ -155,16 +130,10 @@ public class SantaAnimatorControl : MonoBehaviour {
 
 			// It is moved with Character Controller while in the air,
 			// moveDirection is use Axis Input.
-			// 空中にいるときはmoveDirectionを使って移動するので、.
-			// 方向キーの入力を渡しておく。.
-			// 공중에 있는 동안은 캐릭터 컨트롤러를 사용하여 이동하기때문에.
-			// 방향키의 입력을 moveDirection에게 전달해준다.
 			moveDirection = new Vector3(axisInput.x * moveAbilityInAir, moveDirection.y, axisInput.z * moveAbilityInAir);
 			moveDirection.y -= gravity * Time.deltaTime;
 			
 			// JumpVelocity change the state to while in the air,
-			// JumpVelocityは空中でのポーズの制御につかいます。.
-			// JumpVelocity는 공중에서의 포즈를 제어합니다.
 			chrAnimator.SetFloat("JumpVelocity", (moveDirection.y - (jumpAmount * 0.5f)) );
 		}
 
