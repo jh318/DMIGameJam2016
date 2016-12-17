@@ -1829,9 +1829,10 @@ MonoBehaviour:
   - {fileID: 1186977688447334}
   jumpSpeed: 8
   moveAbilityInAir: 4
-  runSpeedMult: 1
   throughPower:
-  - 120
+  - 220
+  - 220
+  - 220
 --- !u!114 &114418508802062434
 MonoBehaviour:
   m_ObjectHideFlags: 1

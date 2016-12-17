@@ -29,6 +29,7 @@ public class PresentController : MonoBehaviour {
 	{
 		if(other.gameObject.tag==objectTag)
 			Destroy(gameObject);
+			GameManager.instance.AddToScore(score);
 		//TODO add to player score
 		//ScoreController.score
 		//GameManager.GetComponent<GameManager>().AddToScore(scoreValue);
