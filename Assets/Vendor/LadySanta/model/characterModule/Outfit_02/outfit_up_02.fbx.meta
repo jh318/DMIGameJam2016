@@ -1,0 +1,152 @@
+fileFormatVersion: 2
+guid: 1a4ac5ae2be56b6408603cd6571b3f59
+timeCreated: 1474801406
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Bip01_Head
+    100002: Bip01_L_Clavicle
+    100004: Bip01_L_Finger0
+    100006: Bip01_L_Finger01
+    100008: Bip01_L_Finger02
+    100010: Bip01_L_Finger1
+    100012: Bip01_L_Finger11
+    100014: Bip01_L_Finger12
+    100016: Bip01_L_Finger2
+    100018: Bip01_L_Finger21
+    100020: Bip01_L_Finger22
+    100022: Bip01_L_Forearm
+    100024: Bip01_L_Hand
+    100026: Bip01_L_UpperArm
+    100028: Bip01_Neck
+    100030: Bip01_Pelvis
+    100032: Bip01_R_Clavicle
+    100034: Bip01_R_Finger0
+    100036: Bip01_R_Finger01
+    100038: Bip01_R_Finger02
+    100040: Bip01_R_Finger1
+    100042: Bip01_R_Finger11
+    100044: Bip01_R_Finger12
+    100046: Bip01_R_Finger2
+    100048: Bip01_R_Finger21
+    100050: Bip01_R_Finger22
+    100052: Bip01_R_Forearm
+    100054: Bip01_R_Hand
+    100056: Bip01_R_UpperArm
+    100058: Bip01_Spine
+    100060: Bip01_Spine1
+    100062: Bone_arm_Acc_L
+    100064: Bone_arm_Acc_R
+    100066: Bone_Breast_L
+    100068: Bone_Breast_R
+    100070: loc_Item_L
+    100072: loc_Item_R
+    100074: //RootNode
+    100076: up_02
+    400000: Bip01_Head
+    400002: Bip01_L_Clavicle
+    400004: Bip01_L_Finger0
+    400006: Bip01_L_Finger01
+    400008: Bip01_L_Finger02
+    400010: Bip01_L_Finger1
+    400012: Bip01_L_Finger11
+    400014: Bip01_L_Finger12
+    400016: Bip01_L_Finger2
+    400018: Bip01_L_Finger21
+    400020: Bip01_L_Finger22
+    400022: Bip01_L_Forearm
+    400024: Bip01_L_Hand
+    400026: Bip01_L_UpperArm
+    400028: Bip01_Neck
+    400030: Bip01_Pelvis
+    400032: Bip01_R_Clavicle
+    400034: Bip01_R_Finger0
+    400036: Bip01_R_Finger01
+    400038: Bip01_R_Finger02
+    400040: Bip01_R_Finger1
+    400042: Bip01_R_Finger11
+    400044: Bip01_R_Finger12
+    400046: Bip01_R_Finger2
+    400048: Bip01_R_Finger21
+    400050: Bip01_R_Finger22
+    400052: Bip01_R_Forearm
+    400054: Bip01_R_Hand
+    400056: Bip01_R_UpperArm
+    400058: Bip01_Spine
+    400060: Bip01_Spine1
+    400062: Bone_arm_Acc_L
+    400064: Bone_arm_Acc_R
+    400066: Bone_Breast_L
+    400068: Bone_Breast_R
+    400070: loc_Item_L
+    400072: loc_Item_R
+    400074: //RootNode
+    400076: up_02
+    4300000: up_02
+    9500000: //RootNode
+    13700000: up_02
+  materials:
+    importMaterials: 1
+    materialName: 1
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,14 @@
+.DS_Store
+Output-Build.txt
+obj/*
+.vs/*
+build/*
+builds/*
+capture/*
+Assembly-*
+Library/*
+Assets/Vendor/ProCore/*
+Temp/*
+*.csproj
+*.sln
+*.userprefs
