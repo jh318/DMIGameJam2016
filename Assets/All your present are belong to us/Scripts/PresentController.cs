@@ -25,7 +25,7 @@ public class PresentController : MonoBehaviour {
 	}
 
 	//Check for collision with a 2D object
-	void OnCollisionEnter2D(Collision2D other)
+	void OnCollisionEnter(Collision other)
 	{
 		if(other.gameObject.tag==objectTag)
 			Destroy(gameObject);
