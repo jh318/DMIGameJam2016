@@ -31,6 +31,10 @@ public class PresentController : MonoBehaviour {
 			Destroy(gameObject);
 			GameManager.instance.AddToScore(scoreValue);
 
+		//TODO add to player score
+		//ScoreController.score
+		//GameManager.GetComponent<GameManager>().AddToScore(scoreValue);
+		GameManager.instance.AddToScore(scoreValue);
 	}
 
 }

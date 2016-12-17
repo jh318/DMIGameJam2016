@@ -12,14 +12,13 @@ public class GameManager : MonoBehaviour {
 	public int score{
 		get {return _score;}
 	}
-
+	// Use this for initialization
 	void Awake () {
 		if (instance == null){
 			instance = this;
 		}
 		else{
 		}		
-//inscreased sluttySanta Move Speed and modified camera for perscetive only.
 	}
 	
 	// Update is called once per frame
@@ -29,10 +28,13 @@ public class GameManager : MonoBehaviour {
 
 	 public void SubtractFromScore(int pointValue) {
         instance._score -= pointValue;
+        // instance.SetScoreText();
+		// AudioManager.PlayEffect("coinLost");
     }
 
     public void AddToScore(int pointValue) {
         instance._score += pointValue;
-		print (score);
+  		//instance.SetScoreText();
+		// AudioManager.PlayEffect("coinPickup");
     }
 }
