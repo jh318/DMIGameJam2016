@@ -20,8 +20,8 @@ public class PresentController : MonoBehaviour {
 	void OnCollisionEnter(Collision other)
 	{
 		if(other.gameObject.tag == "Player")
-			GameManager.instance.AddToScore(scoreValue);
-			Destroy(gameObject);
+			//GameManager.instance.AddToScore(scoreValue);
+			gameObject.SetActive(false);
 	}
 
 }

@@ -12,8 +12,7 @@ public class GameManager : MonoBehaviour {
 	public Text scoreText;
 
 	void Awake () { // Use this for initialization
-		if (instance == null){instance = this;}
-		else{}
+		if (instance == null)	instance = this;
 	}
 	
 	// Update is called once per frame
