@@ -9,13 +9,12 @@ public class PlayerController : MonoBehaviour {
 
     // required Object or component
     public Animator chrAnimator;    // Animator component of character.
-    public RuntimeAnimatorController[] chrAnimatorController;// AnimatorController for viewer and interactive
+    public RuntimeAnimatorController chrAnimatorController;// AnimatorController for viewer and interactive
     public CharacterController chrController;    // CharacterController component.
     [Space(20)]
     public GameObject[] items;  // prefab of items.
     private GameObject itemInHand;  // Items that Santa girl has.
     public Transform[] itemPoint = new Transform[2]; // attach point (parent object of items)
-    public GameObject[] meshData; // character and weapon , the object mesh data is included.
  	
     //HealthController property for triggering hit and fail animations.
     private HealthController _healthCon;
@@ -33,9 +32,11 @@ public class PlayerController : MonoBehaviour {
     private float gravity = 10.0f;
     private AnimatorStateInfo stateInfo; // Save the state in playing now.
     private float runSpeed;
-
+    [Space(20)]
     // power of Throw item animation use.
+    public float throwHeightMultiplier = 0.75f;
     public float[] throwPower = new float[3];
+
     
     void Awake() {
 		_healthCon = gameObject.GetComponent<HealthController>();
@@ -156,9 +157,9 @@ public class PlayerController : MonoBehaviour {
     void DamageAnimationTrigger(float health, float prevHealth, float maxHealth){
 		// for Damage
         if (health < prevHealth){
-			chrAnimator.SetTrigger("Damage_Trg");
+ 			chrAnimator.SetTrigger("Damage_Trg");
 		}
-		Debug.Log("Ow! My health is now " + health);
+		//Debug.Log("Ow! My health is now " + health);
     }
     // Delegate of HealthController event onDeath
     void PlayFailAnimation(){
@@ -200,7 +201,7 @@ public class PlayerController : MonoBehaviour {
                 itemInHand.GetComponent<ItemControl>().waitTime = 1f;
             }
             Vector3 dir = transform.forward * throwPower[idx];
-            dir.y = throwPower[idx] * 0.75f;
+            dir.y = throwPower[idx] * throwHeightMultiplier;
             itemInHand.GetComponent<Rigidbody>().AddForce(dir);
             itemInHand.GetComponent<ItemControl>().InitBullet();
             itemInHand = null;
@@ -237,4 +238,5 @@ public class PlayerController : MonoBehaviour {
         }
         chrAnimator.CrossFade(stateName, 0.05f);
     }
+
 }
