@@ -5,13 +5,15 @@ using UnityEngine;
 public class PresentController : MonoBehaviour {
 
 	//Initiate present attributes
-	public int score;
+	public int scoreValue;
 	public string objectTag; // Object to collides with. Set to player.
 
 
+
+
+
 	// Use this for initialization
-	void Start () {
-		
+	void Awake () {
 	}
 	
 	// Update is called once per frame
@@ -28,6 +30,9 @@ public class PresentController : MonoBehaviour {
 		if(other.gameObject.tag==objectTag)
 			Destroy(gameObject);
 		//TODO add to player score
+		//ScoreController.score
+		//GameManager.GetComponent<GameManager>().AddToScore(scoreValue);
+		GameManager.instance.AddToScore(scoreValue);
 	}
 
 }

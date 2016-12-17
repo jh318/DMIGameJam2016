@@ -18,7 +18,6 @@ public class GameManager : MonoBehaviour {
 			instance = this;
 		}
 		else{
-			gameObject.Destroy;
 		}		
 	}
 	
@@ -33,5 +32,6 @@ public class GameManager : MonoBehaviour {
 
     public void AddToScore(int pointValue) {
         instance._score += pointValue;
+		print (score);
     }
 }
