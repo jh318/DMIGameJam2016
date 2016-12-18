@@ -100,6 +100,7 @@ GameObject:
   - component: {fileID: 81998339834618960}
   - component: {fileID: 114396697426205286}
   - component: {fileID: 45200168386225036}
+  - component: {fileID: 114085491349916064}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1471,7 +1472,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1063798503055058}
   m_LocalRotation: {x: 0.10331167, y: -0, z: -0, w: 0.99464905}
-  m_LocalPosition: {x: -21.25, y: -2.46, z: -9.8775}
+  m_LocalPosition: {x: -113.25, y: -2.46, z: -9.8775}
   m_LocalScale: {x: 1, y: 0.9999999, z: 0.9999999}
   m_Children:
   - {fileID: 4238299805233942}
@@ -1804,7 +1805,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1767359696228894}
   m_LocalRotation: {x: -0, y: 0.70710707, z: -0, w: 0.70710653}
-  m_LocalPosition: {x: -23.75, y: -6.84, z: 3.3225}
+  m_LocalPosition: {x: -115.75, y: -6.84, z: 3.3225}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4311566637448240}
@@ -2086,7 +2087,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 40
+  m_Constraints: 120
   m_CollisionDetection: 0
 --- !u!65 &65610499438318832
 BoxCollider:
@@ -2211,6 +2212,29 @@ Light:
   m_BounceIntensity: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &114085491349916064
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1063798503055058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f5edc519ec214b54a796394844461cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  music: {fileID: 8300000, guid: cc6588c1554a65f41a68b9de2578301d, type: 3}
+  autoStartMusic: 1
+  clips:
+  - {fileID: 8300000, guid: aedc698d478db8f45a50e1d787964966, type: 3}
+  - {fileID: 8300000, guid: e7d1186471bf6de4eb28cc47d5b34ab5, type: 3}
+  - {fileID: 8300000, guid: 7c812fec68ac2884b95b821632dbc016, type: 3}
+  - {fileID: 8300000, guid: cc6588c1554a65f41a68b9de2578301d, type: 3}
+  mixers: []
+  musicMixer: {fileID: 0}
+  defaultSFXMixer: {fileID: 0}
+  sfxSourcesCount: 5
+  minPlayInterval: 0.01
 --- !u!114 &114318943206192086
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2296,7 +2320,7 @@ MonoBehaviour:
   deathParticlesName: 
   destructionParticlesName: 
   destructionSpawnName: 
-  maxHealth: 1000
+  maxHealth: 10
   destructionHealth: -1000
 --- !u!124 &124606104329125990
 Behaviour:
@@ -2428,7 +2452,7 @@ CharacterController:
   serializedVersion: 2
   m_Height: 1.6
   m_Radius: 0.18
-  m_SlopeLimit: 45
+  m_SlopeLimit: 60
   m_StepOffset: 0.3
   m_SkinWidth: 0.01
   m_MinMoveDistance: 0
@@ -2488,7 +2512,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1575332014
+  randomSeed: 2024596309
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -2944,7 +2968,7 @@ ParticleSystem:
     serializedVersion: 3
     enabled: 1
     type: 12
-    radius: 121.46692
+    radius: 44.22052
     angle: 25
     length: 5
     boxX: 1
