@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 413c8f260494f4847baf91bc3bcad481
+timeCreated: 1482079846
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Merry Christmas Flake
+  fontNames:
+  - Merry Christmas Flake
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 74a9819c8f879b147a737fa88c3e1ce6
+timeCreated: 1482079374
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 500
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Christmas Lights Indoor
+  fontNames:
+  - Christmas Lights Indoor
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
