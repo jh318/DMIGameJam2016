@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GIveMeYourINfo : MonoBehaviour {
 
-	public static List<GameObject> presentPool = new List<GameObject>();
+	public static List<GameObject> presentPool = new List<GameObject>(100);
 
 	public static GIveMeYourINfo instance;
 
