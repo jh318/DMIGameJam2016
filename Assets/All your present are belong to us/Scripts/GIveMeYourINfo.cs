@@ -6,25 +6,30 @@ public class GIveMeYourINfo : MonoBehaviour {
 
 	public static List<GameObject> presentPool = new List<GameObject>();
 
-	private bool hasReported = false;
+	public static GIveMeYourINfo instance;
 
-	void Update(){
-        if(presentPool.Count >= 4 && !hasReported)   AddUpPresentValues();
-
+	void Awake () { // Use this for initialization
+		if (instance == null)	instance = this;
 	}
 
 	void OnCollisionEnter (Collision other){
 		if (other.gameObject.tag == "present"){
 			GameObject present = other.gameObject;
 			presentPool.Add (present);
-		}
+		
+			PresentController pc = present.GetComponent<PresentController>();
+			GameManager.instance.AddToWeight(pc.weight);
+			}
+			Debug.Log ("Weightadded");
+
 	}
 
-	void AddUpPresentValues(){
+	public void AddUpPresentValues(){
 		foreach (GameObject present in presentPool){
 			PresentController pc = present.GetComponent<PresentController>();
 			GameManager.instance.AddToScore(pc.scoreValue);
 		}
-		hasReported = true;
+		Debug.Log ("Here");
 	}
+
 }

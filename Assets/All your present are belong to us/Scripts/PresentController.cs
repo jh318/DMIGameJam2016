@@ -7,10 +7,10 @@ public class PresentController : MonoBehaviour {
 	//Initiate present attributes
 	public int scoreValue;
 	public string objectTag; // Object to collides with. Set to player.
+	public int weight;
 
 	// Use this for initialization
-	void Awake () {
-	}
+
 	
 	// Update is called once per frame
 	void Update () {
@@ -19,9 +19,11 @@ public class PresentController : MonoBehaviour {
 	//Check for collision with a 2D object
 	void OnCollisionEnter(Collision other)
 	{
-		if(other.gameObject.tag == "Player")
+		if(other.gameObject.tag == "Player"){
 			//GameManager.instance.AddToScore(scoreValue);
 			gameObject.SetActive(false);
+			//GIveMeYourINfo.instance.AddUpWeight();
 	}
 
+}
 }
