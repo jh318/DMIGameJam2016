@@ -148,7 +148,7 @@ MonoBehaviour:
   - {fileID: 2800000, guid: b8b2d1d613e7527459bbdb231926ece9, type: 3}
   - {fileID: 2800000, guid: 4af350ce4d8a8a84696026ae6ea18349, type: 3}
   coll: {fileID: 6500000}
-  waitTime: 10
+  waitTime: 5
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

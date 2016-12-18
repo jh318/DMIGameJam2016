@@ -1,0 +1,227 @@
+fileFormatVersion: 2
+guid: 8d57d811635867d42adb3f2234f9f0eb
+timeCreated: 1482090767
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: base_for_smokestack004
+    100002: Box487
+    100004: Box488
+    100006: Box489
+    100008: Box490
+    100010: Cylinder096
+    100012: Cylinder097
+    100014: Decor_light050
+    100016: Decor_light051
+    100018: Decor_light052
+    100020: door_knob015
+    100022: door_knob016
+    100024: double_door005
+    100026: house_base008
+    100028: house_bottom_unwrap002
+    100030: house_middle_wrap001
+    100032: //RootNode
+    100034: Object791
+    100036: Roof_top_stright005
+    100038: roof_window004
+    100040: roof_window005
+    100042: smoke_stack_004
+    100044: steps004
+    100046: window027
+    100048: window028
+    100050: window029
+    100052: window030
+    100054: window_single009
+    100056: window_single010
+    100058: window_with_box019
+    100060: window_with_box020
+    400000: base_for_smokestack004
+    400002: Box487
+    400004: Box488
+    400006: Box489
+    400008: Box490
+    400010: Cylinder096
+    400012: Cylinder097
+    400014: Decor_light050
+    400016: Decor_light051
+    400018: Decor_light052
+    400020: door_knob015
+    400022: door_knob016
+    400024: double_door005
+    400026: house_base008
+    400028: house_bottom_unwrap002
+    400030: house_middle_wrap001
+    400032: //RootNode
+    400034: Object791
+    400036: Roof_top_stright005
+    400038: roof_window004
+    400040: roof_window005
+    400042: smoke_stack_004
+    400044: steps004
+    400046: window027
+    400048: window028
+    400050: window029
+    400052: window030
+    400054: window_single009
+    400056: window_single010
+    400058: window_with_box019
+    400060: window_with_box020
+    2300000: base_for_smokestack004
+    2300002: Box487
+    2300004: Box488
+    2300006: Box489
+    2300008: Box490
+    2300010: Cylinder096
+    2300012: Cylinder097
+    2300014: Decor_light050
+    2300016: Decor_light051
+    2300018: Decor_light052
+    2300020: door_knob015
+    2300022: door_knob016
+    2300024: double_door005
+    2300026: house_base008
+    2300028: house_bottom_unwrap002
+    2300030: house_middle_wrap001
+    2300032: Object791
+    2300034: Roof_top_stright005
+    2300036: roof_window004
+    2300038: roof_window005
+    2300040: smoke_stack_004
+    2300042: steps004
+    2300044: window027
+    2300046: window028
+    2300048: window029
+    2300050: window030
+    2300052: window_single009
+    2300054: window_single010
+    2300056: window_with_box019
+    2300058: window_with_box020
+    3300000: base_for_smokestack004
+    3300002: Box487
+    3300004: Box488
+    3300006: Box489
+    3300008: Box490
+    3300010: Cylinder096
+    3300012: Cylinder097
+    3300014: Decor_light050
+    3300016: Decor_light051
+    3300018: Decor_light052
+    3300020: door_knob015
+    3300022: door_knob016
+    3300024: double_door005
+    3300026: house_base008
+    3300028: house_bottom_unwrap002
+    3300030: house_middle_wrap001
+    3300032: Object791
+    3300034: Roof_top_stright005
+    3300036: roof_window004
+    3300038: roof_window005
+    3300040: smoke_stack_004
+    3300042: steps004
+    3300044: window027
+    3300046: window028
+    3300048: window029
+    3300050: window030
+    3300052: window_single009
+    3300054: window_single010
+    3300056: window_with_box019
+    3300058: window_with_box020
+    4300000: base_for_smokestack004
+    4300002: Box487
+    4300004: Box488
+    4300006: Box489
+    4300008: Box490
+    4300010: Cylinder096
+    4300012: Cylinder097
+    4300014: Decor_light050
+    4300016: Decor_light051
+    4300018: Decor_light052
+    4300020: door_knob015
+    4300022: door_knob016
+    4300024: double_door005
+    4300026: house_base008
+    4300028: house_bottom_unwrap002
+    4300030: house_middle_wrap001
+    4300032: Object791
+    4300034: Roof_top_stright005
+    4300036: roof_window004
+    4300038: roof_window005
+    4300040: smoke_stack_004
+    4300042: steps004
+    4300044: window027
+    4300046: window028
+    4300048: window029
+    4300050: window030
+    4300052: window_single009
+    4300054: window_single010
+    4300056: window_with_box019
+    4300058: window_with_box020
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

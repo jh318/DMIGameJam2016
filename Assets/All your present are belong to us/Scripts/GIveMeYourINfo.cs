@@ -15,6 +15,7 @@ public class GIveMeYourINfo : MonoBehaviour {
 	void OnTriggerEnter (Collider other){
 		if (other.gameObject.tag == "present"){
 			StartCoroutine("AddPresent" , other.gameObject);
+			//GameManager.instance.AddPresentToCount(1);
 		}
 	}
 
@@ -27,10 +28,15 @@ public class GIveMeYourINfo : MonoBehaviour {
 		yield return new WaitForEndOfFrame();
 	}
 
+	public void RemovePresent(int numRemoved){
+		for (int i = 1; i <= numRemoved; i++){
+			presentPool.RemoveAt(0);
+		}
+	}
+
 	public void AddUpPresentValues(){
 		foreach (GameObject present in presentPool){
 			PresentController pc = present.GetComponent<PresentController>();
-			GameManager.instance.AddToScore(pc.scoreValue);
 			GameManager.instance.AddToScore(pc.scoreValue);
 		}
 	}

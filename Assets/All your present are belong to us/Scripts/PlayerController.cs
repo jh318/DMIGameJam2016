@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour {
     [Space(20)]
     public float jumpSpeed = 8.0f;
     public float moveAbilityInAir = 4.0f;
+    public float JumpVelocityMult = 0.75f;
     private float jumpAmount = 0.0f;
     private float runSpeedAdd = 1f;
     private Vector3 moveDirection = Vector3.zero;
@@ -37,6 +38,7 @@ public class PlayerController : MonoBehaviour {
     public float throwHeightMultiplier = 0.75f;
     public float[] throwPower = new float[3];
 
+    private bool hasThrown = false;
     
     void Awake() {
 		_healthCon = gameObject.GetComponent<HealthController>();
@@ -62,24 +64,27 @@ public class PlayerController : MonoBehaviour {
         	chrAnimator.SetInteger("AttackIdx", 0);
         
         // reaction of key input.
-
+        if (GameManager.instance.presentCount >= 1){
         // Take out Present
-       	if (Input.GetButtonDown("attack") && chrAnimator.GetBool("Items_Bool") == false) {
-        	chrAnimator.SetBool("Items_Bool", true);
-    	}
-        
-        // for Attack
-        else if (Input.GetButtonDown("attack")) {
- 			SetAttack(2);
-	    } 
+	       	if (Input.GetButtonDown("attack") && chrAnimator.GetBool("Items_Bool") == false) {
+	        	chrAnimator.SetBool("Items_Bool", true);
+	    	}
+	        
+	        // for Attack
+	        else if (Input.GetButtonDown("attack")) {
+	 			SetAttack(2);
+		    } 
 
-        if (Input.GetButtonDown("specialAttack") && chrAnimator.GetBool("Items_Bool") == false) {
-        	chrAnimator.SetBool("Items_Bool", true);
+	        if (Input.GetButtonDown("specialAttack") && chrAnimator.GetBool("Items_Bool") == false) {
+	        	chrAnimator.SetBool("Items_Bool", true);
+			}
+
+        	else if (GameManager.instance.presentCount >= 5){
+			 	if (Input.GetButtonDown("specialAttack")) {
+		 			SetAttack(3);
+	 			}
+		    }
 		}
-
-	 	else if (Input.GetButtonDown("specialAttack")) {
- 			SetAttack(3);
-	    } 
        
         /*
         // for Guard
@@ -192,13 +197,17 @@ public class PlayerController : MonoBehaviour {
     // na_ThrowItem, na_ThrowItem_Sp, na_prezentItem
     void ThroughItem(){
         if(itemInHand){
+            hasThrown = true;
             itemInHand.transform.parent = null;
             itemInHand.GetComponent<Rigidbody>().isKinematic = false;
             int idx = chrAnimator.GetInteger("AttackIdx") - 1;
             // this for viewer mode
-            if(idx < 0){
-                idx = 0;
-                itemInHand.GetComponent<ItemControl>().waitTime = 1f;
+            if(idx == 2){
+            	itemInHand.GetComponent<Damage3D>().damage = 3; 
+				GameManager.instance.PresentThown(2);              
+            }
+            else{
+            	GameManager.instance.PresentThown(1);
             }
             Vector3 dir = transform.forward * throwPower[idx];
             dir.y = throwPower[idx] * throwHeightMultiplier;
@@ -217,7 +226,7 @@ public class PlayerController : MonoBehaviour {
             // when in ground.
             jumpAmount += jumpSpeed;
             chrAnimator.SetInteger ("JumpIdx", 1);
-            chrAnimator.SetFloat("JumpVelocity", jumpAmount * 0.5f );
+            chrAnimator.SetFloat("JumpVelocity", jumpAmount * JumpVelocityMult);
         }
         else if (chrAnimator.GetInteger ("JumpIdx") == 2) {
             // jump in air

@@ -37,13 +37,13 @@ public class BasicEnemyMovement : MonoBehaviour {
     
     //Listen for these events while enabled.
     	_healthCon.onDeath += DisableMovementOnDeath;
-    	_healthCon.onDestruction += SpawnDeathParticles;
+    	_healthCon.onHealthChanged += PlayHitAnimation;
     }
 
     // Stop listening for these events when disabled.
     void OnDisable() {
     	_healthCon.onDeath -= DisableMovementOnDeath;
-    	_healthCon.onDestruction -= SpawnDeathParticles;
+    	// _healthCon.onDestruction -= SpawnDeathParticles;
     }
 	
 	// Update is called once per frame
@@ -58,9 +58,15 @@ public class BasicEnemyMovement : MonoBehaviour {
 		// StartCoroutine("DisableMovementOnDeathCoroutine");
 		isDisabled = true;
 		animator.SetBool("isDisabled", true);
+	}
+		
+	void PlayHitAnimation(float health, float prevHealth, float maxHealth){
+		if (health < prevHealth){
+			animator.SetTrigger("isHit");		
 		}
+	}
 
-	void SpawnDeathParticles(){
+	public void SpawnDeathParticles(){
 		Spawner.Spawn("SnowmanDeath");
 	}
 

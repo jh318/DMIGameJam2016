@@ -1,0 +1,192 @@
+fileFormatVersion: 2
+guid: 660fb5b758ac629448ec7aa70f0ba9d0
+timeCreated: 1482090766
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: bottom_car_body002
+    100002: //RootNode
+    100004: dash003
+    100006: front_bumper002
+    100008: glass004
+    100010: grill002
+    100012: ground_bumper002
+    100014: head_light_base002
+    100016: head_lights004
+    100018: lights002
+    100020: motor006
+    100022: new_car_body_lo003
+    100024: Object772
+    100026: Object773
+    100028: Object774
+    100030: Object775
+    100032: Object776
+    100034: Object777
+    100036: Object778
+    100038: Object779
+    100040: Object780
+    100042: Object781
+    100044: Object782
+    100046: windshild_box002
+    400000: bottom_car_body002
+    400002: //RootNode
+    400004: dash003
+    400006: front_bumper002
+    400008: glass004
+    400010: grill002
+    400012: ground_bumper002
+    400014: head_light_base002
+    400016: head_lights004
+    400018: lights002
+    400020: motor006
+    400022: new_car_body_lo003
+    400024: Object772
+    400026: Object773
+    400028: Object774
+    400030: Object775
+    400032: Object776
+    400034: Object777
+    400036: Object778
+    400038: Object779
+    400040: Object780
+    400042: Object781
+    400044: Object782
+    400046: windshild_box002
+    2300000: bottom_car_body002
+    2300002: dash003
+    2300004: front_bumper002
+    2300006: glass004
+    2300008: grill002
+    2300010: ground_bumper002
+    2300012: head_light_base002
+    2300014: head_lights004
+    2300016: lights002
+    2300018: motor006
+    2300020: new_car_body_lo003
+    2300022: Object772
+    2300024: Object773
+    2300026: Object774
+    2300028: Object775
+    2300030: Object776
+    2300032: Object777
+    2300034: Object778
+    2300036: Object779
+    2300038: Object780
+    2300040: Object781
+    2300042: Object782
+    2300044: windshild_box002
+    3300000: bottom_car_body002
+    3300002: dash003
+    3300004: front_bumper002
+    3300006: glass004
+    3300008: grill002
+    3300010: ground_bumper002
+    3300012: head_light_base002
+    3300014: head_lights004
+    3300016: lights002
+    3300018: motor006
+    3300020: new_car_body_lo003
+    3300022: Object772
+    3300024: Object773
+    3300026: Object774
+    3300028: Object775
+    3300030: Object776
+    3300032: Object777
+    3300034: Object778
+    3300036: Object779
+    3300038: Object780
+    3300040: Object781
+    3300042: Object782
+    3300044: windshild_box002
+    4300000: bottom_car_body002
+    4300002: dash003
+    4300004: front_bumper002
+    4300006: glass004
+    4300008: grill002
+    4300010: ground_bumper002
+    4300012: head_light_base002
+    4300014: head_lights004
+    4300016: lights002
+    4300018: motor006
+    4300020: new_car_body_lo003
+    4300022: Object772
+    4300024: Object773
+    4300026: Object774
+    4300028: Object775
+    4300030: Object776
+    4300032: Object777
+    4300034: Object778
+    4300036: Object779
+    4300038: Object780
+    4300040: Object781
+    4300042: Object782
+    4300044: windshild_box002
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -137,7 +137,7 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 7037fe0f16c078748b8c995233752f67, type: 3}
   - {fileID: 2800000, guid: 18705ffd38d883e41ad2263002c42db9, type: 3}
   coll: {fileID: 13500000}
-  waitTime: 10
+  waitTime: 5
 --- !u!135 &13500000
 SphereCollider:
   m_ObjectHideFlags: 1

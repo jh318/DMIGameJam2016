@@ -12,8 +12,10 @@ public class GameManager : MonoBehaviour {
 	private int _weight;
 	public int weight{get {return _weight;}}
 
+	public int presentCount = 3;
+
 	public Text scoreText;
-	public Text presentCount;
+	public Text presentCountText;
 	public Text totalWeight;
 
 	void Awake () { // Use this for initialization
@@ -44,12 +46,26 @@ public class GameManager : MonoBehaviour {
 		scoreText.text = "Score: " + _score;
 	}
 
-	public void UpdatePresentCount()
-	{
-		presentCount.text = "Presents: " + (GIveMeYourINfo.presentPool.Count / 2);
+	public void AddPresentToCount(int count){
+		instance.presentCount += count;
+		presentCountText.text = "Presents: " + presentCount;
 	}
 
+	public void PresentThown(int numThrown){
+		// instance.presentCount -= numThrown;
+		// presentCountText.text = "Presents: " + presentCount;
+		GIveMeYourINfo.instance.RemovePresent(numThrown);
+		UpdatePresentCount();
+	}
+
+	public void UpdatePresentCount() // List method
+	{	
+		instance.presentCount = GIveMeYourINfo.presentPool.Count;
+		presentCountText.text = "Presents: " + presentCount;
+	}
+
+
 	void UpdateTotalWeight(){
-		totalWeight.text = "Weight: " + _weight;
+		// totalWeight.text = "Weight: " + _weight;
 	}
 }

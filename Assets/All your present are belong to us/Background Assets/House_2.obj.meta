@@ -1,0 +1,172 @@
+fileFormatVersion: 2
+guid: 594e832212991ed4bbe1f2f2a539563e
+timeCreated: 1482090756
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: base_for_smokestack002
+    100002: door_knob013
+    100004: Door_single001
+    100006: house_006
+    100008: //RootNode
+    100010: house_5
+    100012: house_base007
+    100014: Roof_top_stright004
+    100016: Smoke_stack_2
+    100018: window020
+    100020: window021
+    100022: window022
+    100024: window023
+    100026: window024
+    100028: window025
+    100030: window026
+    100032: window_single005
+    100034: window_single006
+    100036: window_with_box017
+    100038: window_with_box018
+    400000: base_for_smokestack002
+    400002: door_knob013
+    400004: Door_single001
+    400006: house_006
+    400008: //RootNode
+    400010: house_5
+    400012: house_base007
+    400014: Roof_top_stright004
+    400016: Smoke_stack_2
+    400018: window020
+    400020: window021
+    400022: window022
+    400024: window023
+    400026: window024
+    400028: window025
+    400030: window026
+    400032: window_single005
+    400034: window_single006
+    400036: window_with_box017
+    400038: window_with_box018
+    2300000: base_for_smokestack002
+    2300002: door_knob013
+    2300004: Door_single001
+    2300006: house_006
+    2300008: house_5
+    2300010: house_base007
+    2300012: Roof_top_stright004
+    2300014: Smoke_stack_2
+    2300016: window020
+    2300018: window021
+    2300020: window022
+    2300022: window023
+    2300024: window024
+    2300026: window025
+    2300028: window026
+    2300030: window_single005
+    2300032: window_single006
+    2300034: window_with_box017
+    2300036: window_with_box018
+    3300000: base_for_smokestack002
+    3300002: door_knob013
+    3300004: Door_single001
+    3300006: house_006
+    3300008: house_5
+    3300010: house_base007
+    3300012: Roof_top_stright004
+    3300014: Smoke_stack_2
+    3300016: window020
+    3300018: window021
+    3300020: window022
+    3300022: window023
+    3300024: window024
+    3300026: window025
+    3300028: window026
+    3300030: window_single005
+    3300032: window_single006
+    3300034: window_with_box017
+    3300036: window_with_box018
+    4300000: base_for_smokestack002
+    4300002: door_knob013
+    4300004: Door_single001
+    4300006: house_006
+    4300008: house_5
+    4300010: house_base007
+    4300012: Roof_top_stright004
+    4300014: Smoke_stack_2
+    4300016: window020
+    4300018: window021
+    4300020: window022
+    4300022: window023
+    4300024: window024
+    4300026: window025
+    4300028: window026
+    4300030: window_single005
+    4300032: window_single006
+    4300034: window_with_box017
+    4300036: window_with_box018
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
