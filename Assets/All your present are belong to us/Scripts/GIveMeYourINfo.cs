@@ -19,12 +19,11 @@ public class GIveMeYourINfo : MonoBehaviour {
 		}
 	}
 
-	IEnumerator AddPresent(GameObject present) { 
+	IEnumerator AddPresent(GameObject present) {
 		presentPool.Add (present);	
 		PresentController pc = present.GetComponent<PresentController>();
 		GameManager.instance.AddToWeight(pc.weight);
 		GameManager.instance.UpdatePresentCount();
-		Debug.Log ("Weightadded");
 		yield return new WaitForEndOfFrame();
 	}
 

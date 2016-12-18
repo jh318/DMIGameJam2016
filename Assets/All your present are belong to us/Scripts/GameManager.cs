@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour {
 
 	public static GameManager instance;
 
+	public GameObject player;
+
 	private int _score; 	//_score can only be modified using the functions SubtractFromScore and AddToScore.
 	public int score{get {return _score;}} 	// Property that references the the private variable _score.
 	private int _weight;
@@ -16,10 +18,16 @@ public class GameManager : MonoBehaviour {
 
 	public Text scoreText;
 	public Text presentCountText;
-	public Text totalWeight;
+	public Text healthText;
+	private float health;
 
 	void Awake () { // Use this for initialization
 		if (instance == null)	instance = this;
+	}
+
+	void Update(){
+		health = player.GetComponent<HealthController>().health;
+
 	}
 	
 
@@ -44,6 +52,7 @@ public class GameManager : MonoBehaviour {
 	void UpdateScore ()
 	{
 		scoreText.text = "Score: " + _score;
+		healthText.text = "Health: " + health;
 	}
 
 	public void AddPresentToCount(int count){

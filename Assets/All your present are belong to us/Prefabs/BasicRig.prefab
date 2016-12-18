@@ -2254,6 +2254,7 @@ MonoBehaviour:
   - {fileID: 100002, guid: 59591e7fd9e127c48b2c071d361caed0, type: 2}
   - {fileID: 100002, guid: 1f5e4dca89c07ad418e1de41f8a99bd4, type: 2}
   - {fileID: 100002, guid: 74dee6a5ea4d41e40875348d0eac9958, type: 2}
+  - {fileID: 100002, guid: 3fb02f49f852a84489820fd57c1f3c3e, type: 2}
   itemPoint:
   - {fileID: 4105950754744170}
   - {fileID: 4415851832720702}
@@ -2262,6 +2263,7 @@ MonoBehaviour:
   JumpVelocityMult: 0.75
   throwHeightMultiplier: 0.75
   throwPower:
+  - 120
   - 120
   - 120
   - 120

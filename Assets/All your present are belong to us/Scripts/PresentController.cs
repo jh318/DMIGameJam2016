@@ -10,16 +10,10 @@ public class PresentController : MonoBehaviour {
 
 	// Use this for initialization
 
-	
-	// Update is called once per frame
-	void Update () {
-	}
-
 	//Check for collision with a 2D object
 	void OnTriggerEnter(Collider other)
 	{
 		if(other.gameObject.tag == "Player"){
-			//GameManager.instance.AddToScore(scoreValue);
 			gameObject.SetActive(false);
 			//GIveMeYourINfo.instance.AddUpWeight();
 	}

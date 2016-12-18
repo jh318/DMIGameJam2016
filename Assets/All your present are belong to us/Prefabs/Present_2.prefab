@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 54968963329207046}
   m_Layer: 0
   m_Name: Box_2
-  m_TagString: Untagged
+  m_TagString: present
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 4696640886143438}
   m_Layer: 0
   m_Name: Present_2
-  m_TagString: Untagged
+  m_TagString: present
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
