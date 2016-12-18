@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: c306bf14f4c03604ebd6a074dd499c63
+timeCreated: 1482079752
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: First Christmas
+  fontNames:
+  - First Christmas
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
