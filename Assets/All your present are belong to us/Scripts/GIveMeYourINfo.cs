@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GIveMeYourINfo : MonoBehaviour {
 
-	public static List<GameObject> presentPool = new List<GameObject>(100);
+	public static List<GameObject> presentPool = new List<GameObject>();
 
 	public static GIveMeYourINfo instance;
 
@@ -16,7 +16,12 @@ public class GIveMeYourINfo : MonoBehaviour {
 		if (other.gameObject.tag == "present"){
 			GameObject present = other.gameObject;
 			presentPool.Add (present);
-		}
+		
+			PresentController pc = present.GetComponent<PresentController>();
+			GameManager.instance.AddToWeight(pc.weight);
+			}
+			Debug.Log ("Weightadded");
+
 	}
 
 	public void AddUpPresentValues(){
@@ -26,4 +31,5 @@ public class GIveMeYourINfo : MonoBehaviour {
 		}
 		Debug.Log ("Here");
 	}
+
 }

@@ -7,6 +7,7 @@ public class PresentController : MonoBehaviour {
 	//Initiate present attributes
 	public int scoreValue;
 	public string objectTag; // Object to collides with. Set to player.
+	public int weight;
 
 	// Use this for initialization
 
@@ -21,6 +22,7 @@ public class PresentController : MonoBehaviour {
 		if(other.gameObject.tag == "Player"){
 			//GameManager.instance.AddToScore(scoreValue);
 			gameObject.SetActive(false);
+			//GIveMeYourINfo.instance.AddUpWeight();
 	}
 
 }
