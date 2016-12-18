@@ -20,10 +20,6 @@ public class GameManager : MonoBehaviour {
 		if (instance == null)	instance = this;
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		UpdatePresentCount ();
-	}
 
 	public void SubtractFromScore(int pointValue) {
         instance._score -= pointValue;
@@ -48,9 +44,9 @@ public class GameManager : MonoBehaviour {
 		scoreText.text = "Score: " + _score;
 	}
 
-	void UpdatePresentCount()
+	public void UpdatePresentCount()
 	{
-		presentCount.text = "Presents: " + GIveMeYourINfo.presentPool.Count;
+		presentCount.text = "Presents: " + (GIveMeYourINfo.presentPool.Count / 2);
 	}
 
 	void UpdateTotalWeight(){

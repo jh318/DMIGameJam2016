@@ -60,26 +60,26 @@ public class DirectionalBoxCollider2D : DirectionalComponent{
     }
 
     //Applies and stores collider variables for each direction based on current collider variables.
-    [ContextMenu("Apply Left Postional Values From Collider")]
+    [ContextMenu("Apply Left Positional Values From Collider")]
     void ApplyLeft()
     {
         leftOffset = boxCollider.offset;
         leftSize = boxCollider.size;
     }
 
-    [ContextMenu("Apply Right Postional Values From Collider")]
+    [ContextMenu("Apply Right Positional Values From Collider")]
     void ApplyRight()
     {
         rightOffset = boxCollider.offset;
         rightSize = boxCollider.size;
     }
-    [ContextMenu("Apply Up Postional Values From Collider")]
+    [ContextMenu("Apply Up Positional Values From Collider")]
     void ApplyUp()
     {
         upOffset = boxCollider.offset;
         upSize = boxCollider.size;
     }
-    [ContextMenu("Apply Down Postional Values From Collider")]
+    [ContextMenu("Apply Down Positional Values From Collider")]
     void ApplyDown()
     {
         downOffset = boxCollider.offset;
