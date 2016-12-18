@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour {
 
 	void Update(){
 		health = player.GetComponent<HealthController>().health;
-
+		healthText.text = "Health: " + health;
 	}
 	
 

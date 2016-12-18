@@ -7,6 +7,7 @@ public class DropZoneController : MonoBehaviour {
 	
 	private bool isNotTallied = true;
 	private GameObject colliderObject;
+	public GameObject WinText;
 	public Text winText;
 	private bool gameEnd = false;
 
@@ -14,7 +15,7 @@ public class DropZoneController : MonoBehaviour {
 		StartCoroutine("TallyScore" , other.gameObject);
 		if (other.tag == "Player") {
 			winText.text = "You Win!\n Final Score: " + GameManager.instance.score + "\nPress any key to \nrestart.";
-			winText.enabled = true;
+			WinText.SetActive(true);
 			gameEnd = true;
 			}
 		}

@@ -1,0 +1,177 @@
+fileFormatVersion: 2
+guid: 274d031d8c592bb4b9194ee0e553bc49
+timeCreated: 1482099192
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Box492
+    100002: Box493
+    100004: Cylinder099
+    100006: Cylinder102
+    100008: Cylinder103
+    100010: Cylinder104
+    100012: Cylinder105
+    100014: Decor_light065
+    100016: fin
+    100018: fin001
+    100020: glass003
+    100022: head_rest005
+    100024: Light_hook003
+    100026: Light_hook009
+    100028: Object798
+    100030: Object799
+    100032: //RootNode
+    100034: seat006
+    100036: Tube031
+    100038: Tube032
+    100040: windshild_box001
+    400000: Box492
+    400002: Box493
+    400004: Cylinder099
+    400006: Cylinder102
+    400008: Cylinder103
+    400010: Cylinder104
+    400012: Cylinder105
+    400014: Decor_light065
+    400016: fin
+    400018: fin001
+    400020: glass003
+    400022: head_rest005
+    400024: Light_hook003
+    400026: Light_hook009
+    400028: Object798
+    400030: Object799
+    400032: //RootNode
+    400034: seat006
+    400036: Tube031
+    400038: Tube032
+    400040: windshild_box001
+    2300000: Box492
+    2300002: Box493
+    2300004: Cylinder099
+    2300006: Cylinder102
+    2300008: Cylinder103
+    2300010: Cylinder104
+    2300012: Cylinder105
+    2300014: Decor_light065
+    2300016: fin
+    2300018: fin001
+    2300020: glass003
+    2300022: head_rest005
+    2300024: Light_hook003
+    2300026: Light_hook009
+    2300028: Object798
+    2300030: Object799
+    2300032: seat006
+    2300034: Tube031
+    2300036: Tube032
+    2300038: windshild_box001
+    3300000: Box492
+    3300002: Box493
+    3300004: Cylinder099
+    3300006: Cylinder102
+    3300008: Cylinder103
+    3300010: Cylinder104
+    3300012: Cylinder105
+    3300014: Decor_light065
+    3300016: fin
+    3300018: fin001
+    3300020: glass003
+    3300022: head_rest005
+    3300024: Light_hook003
+    3300026: Light_hook009
+    3300028: Object798
+    3300030: Object799
+    3300032: seat006
+    3300034: Tube031
+    3300036: Tube032
+    3300038: windshild_box001
+    4300000: Box492
+    4300002: Box493
+    4300004: Cylinder099
+    4300006: Cylinder102
+    4300008: Cylinder103
+    4300010: Cylinder104
+    4300012: Cylinder105
+    4300014: Decor_light065
+    4300016: fin
+    4300018: fin001
+    4300020: glass003
+    4300022: head_rest005
+    4300024: Light_hook003
+    4300026: Light_hook009
+    4300028: Object798
+    4300030: Object799
+    4300032: seat006
+    4300034: Tube031
+    4300036: Tube032
+    4300038: windshild_box001
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
